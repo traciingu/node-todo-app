@@ -1,0 +1,24 @@
+.create-todo-form {
+    margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 500px) {
+    .create-todo-form {
+        padding: 1.15em 1em;
+    }
+
+    .create-todo-form * {
+        font-size: 1.25rem;
+    }
+}
+
+.create-todo-form-btn {
+    background-color: inherit;
+    color: hsl(236, 9%, 61%);
+}
+
+@media only screen and (min-width: 500px) {
+    .create-todo-form-btn {
+        margin-left: 4em;
+    }
+}

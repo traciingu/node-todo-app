@@ -1,0 +1,54 @@
+.todo-list {
+    width: 100%;
+}
+
+.todo-item {
+    margin: .18em auto;
+    animation: fadein .5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+@media only screen and (min-width: 500px) {
+    .todo-item {
+        padding: 1.15em 1em;
+    }
+
+    .todo-item * {
+        font-size: 1.25rem;
+    }
+}
+
+.removed {
+    animation: fadeout .5s;
+}
+
+@keyframes fadeout {
+    from { opacity: 1 }
+    to { opacity: 0 }
+}
+
+.todo-item:not(:first-child) {
+    border-radius: 0;
+}
+
+.todo-item:first-child {
+    border-radius: .4em .4em 0 0;
+}
+
+.todo-item-name {
+    margin: 0;
+    margin-right: auto;
+}
+
+.todo-item-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.todo-item-options > * {
+    background-color: transparent;
+}

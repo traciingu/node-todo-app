@@ -1,0 +1,269 @@
+
+input, button {
+    border-radius: .3em;
+    border: none;
+}
+
+button {
+    padding: .25em;
+}
+
+.todo-card {
+    width: 100%;
+    height: fit-content;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding-bottom: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-card.light {
+    background-color: rgb(245, 245, 245);
+}
+
+.todo-card.dark {
+    background-color: hsl(235, 21%, 11%);
+}
+
+header {
+    width: 100%;
+    padding-bottom: 7em;
+    transition: background-image 0.5s ease;
+}
+
+header.light {
+    background-image: url("../images/bg-mobile-light.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+header.dark {
+    background-image: url("../images/bg-mobile-dark.jpg");
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+@media only screen and (min-width: 500px) {
+    header  {
+        padding-bottom: 10em;
+    }
+
+    header.light {
+        background-image: url("../images/bg-desktop-light.jpg");
+    }
+
+    header.dark {
+        background-image: url("../images/bg-desktop-dark.jpg");
+    }
+}
+
+
+.inner-header {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 2.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    letter-spacing: .5em;
+    color: white;
+    padding: 0;
+}
+
+.theme-switch-btn {
+    width: 20%;
+    font-size: 1.5rem;
+    color: white;
+    background-color: inherit;
+}
+
+.theme-switch-btn * {
+    animation: fadein .5s;
+}
+
+@keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  @media only screen and (min-width: 500px) {
+    .inner-header  {
+        width: 40%;
+        margin-top: 5em;
+   }
+
+   .title {
+    font-size: 2.5rem;
+   }
+
+   .theme-switch-btn {
+    font-size: 2rem;
+    padding: 0;
+   }
+}
+
+.todo-card-body {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -6em;
+}
+
+.todo-card-options {
+    max-width: 100%;
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.todo-card-options * {
+    color: hsl(236, 9%, 61%);
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.todo-card-options.light * {
+    background-color: white;
+}
+
+.todo-card-options.dark * {
+    background-color: hsl(235, 24%, 19%);
+}
+
+@media only screen and (min-width: 500px) {
+    .todo-card-body {
+        width: 40%;
+        margin-top: -7em;
+    }
+}
+
+.inner-card-options {
+    max-width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 0 1.25em;
+    border-radius: 0 0 .4em .4em;
+}
+
+.inner-card-options * {
+    font-size: .8rem;
+}
+
+.inner-card-options.light {
+    background-color: white;
+}
+
+.inner-card-options.dark {
+    background-color: hsl(235, 24%, 19%);
+}
+
+@media only screen and (min-width: 500px) {
+    .inner-card-options {
+        padding: 0 2em;
+    }
+
+    .inner-card-options * {
+        font-size: .9rem;
+    }
+}
+
+.todo-card-filters {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 1em;
+    padding: 1em 0;
+    display: flex;
+    justify-content: center;
+    border-radius: .4em;
+}
+
+.todo-card-filters.light {
+    background-color: white;
+}
+
+.todo-card-filters.dark {
+    background-color: hsl(235, 24%, 19%);
+}
+
+.todo-card-filters > * {
+    padding: 0 .5em;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.todo-card-filters > .active {
+    color: hsl(220, 98%, 61%);
+}
+
+.complete-btn {
+    padding: 0;
+}
+
+.complete-btn-circle {
+    color: lightgray;
+    font-size: 1.5rem;
+}
+
+.complete-btn-check {
+    color: hsl(192, 66%, 55%);
+    font-size: 1.5rem;
+}
+
+.card-item {
+    display: grid;
+    grid-template-columns: 1fr 7fr 2fr;
+    padding: .75em 1em;
+    border-radius: .4em;
+}
+
+.card-item > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-item, .card-item * {
+    transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+.card-item * {
+    font-size: 1rem;
+}
+
+.card-item.light {
+    background-color: white;
+    color: black;
+}
+
+.card-item.light * {
+    background-color: white;
+    color: initial;
+}
+
+.card-item.dark {
+    background-color:  hsl(235, 24%, 19%);
+    color: hsl(234, 39%, 85%);
+}
+
+.card-item.dark * {
+    background-color: hsl(235, 24%, 19%);
+    color: hsl(236, 9%, 61%);
+}
+
+.card-item > input {
+    padding-left: .25em;
+}
+
+.card-item.completed > input {
+    opacity: 0.5;
+}
+
+.card-item > p {
+    padding-left: .25em;
+}
+
+.card-item.completed > p {
+    opacity: 0.5;
+}
