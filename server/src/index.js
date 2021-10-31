@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const mongoose = require('mongoose');
 
 const dbURI = "mongodb+srv://dbUser:D48wwEkBf9Tkkujn@cluster0.fvgd6.mongodb.net/node-todo-app?retryWrites=true&w=majority";
@@ -16,6 +17,7 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 
 app.use('/api/v1/todos', todoRouter);
 
