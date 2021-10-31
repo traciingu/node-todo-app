@@ -4,7 +4,18 @@ const router = express.Router();
 const Todo = require('../models/todo');
 
 router.get('/', (req, res) => {
-    Todo.find()
+    let filter = {};
+    const query = req.query.filter.toLowerCase();
+    
+    if(query === 'all'){
+        filter = {};
+    } else if(query === 'active'){
+        filter = {completed: false};
+    } else if(query === 'completed'){
+        filter = {completed: true};
+    }
+
+    Todo.find(filter)
         .then((result) => res.send(result))
         .catch((err) => console.log(err));
 });
