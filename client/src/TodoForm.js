@@ -11,9 +11,9 @@ export default function TodoForm({ addTodo, themeState }) {
         e.preventDefault();
 
         if (name.trim().length > 0) {
-            setCompleted(false);
             addTodo(name, completed);
             setName("");
+            setCompleted(false);
         }
     };
 

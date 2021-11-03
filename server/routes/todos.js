@@ -5,7 +5,7 @@ const Todo = require('../models/todo');
 
 router.get('/', (req, res) => {
     let filter = {};
-    const query = req.query.filter.toLowerCase();
+    const query = req.query.filter ? req.query.filter.toLowerCase() : '';
     
     if(query === 'all'){
         filter = {};
@@ -31,7 +31,7 @@ router.get('/:id', (req, res) => {
 
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
     const newTodo = new Todo({
         name: req.body.name,
         completed: req.body.completed
@@ -41,9 +41,9 @@ router.post('/', (req, res) => {
         return res.status(400).json({ msg: "Please enter a todo task" });
     }
 
-    newTodo.save()
-        .then((result) => res.send(result))
-        .catch((err) => console.log(err));
+    console.log(await newTodo.save()
+        .then((result) => result)
+        .catch((err) => console.log(err)));
 });
 
 router.put('/:id', (req, res) => {
